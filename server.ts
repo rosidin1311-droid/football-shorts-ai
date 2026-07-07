@@ -7,8 +7,8 @@ import { JobQueue } from "./server/queue.js";
 import { YouTubeService } from "./server/youtube.js";
 import { ShortJob } from "./src/types.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filenamePath = typeof import.meta?.url === "string" ? fileURLToPath(import.meta.url) : "";
+const __dirnamePath = __filenamePath ? path.dirname(__filenamePath) : "";
 
 async function startServer() {
   const app = express();
